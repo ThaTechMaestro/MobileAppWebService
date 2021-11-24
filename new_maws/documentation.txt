@@ -1,0 +1,58 @@
+MYSQL:
+
+COMMAND:::
+Starting Up a mysql db on your system.
+Starting it Up --> sudo /etc/init.d/mysql start
+
+COMMAND:::
+Logging into your mysql db --->  sudo mysql -u root -p
+
+COMMAND:
+SHOW DATABASES;
+This shows the list of databases created.
+
+COMMAND:
+--Creating a database
+create database name_of_database;
+
+COMMAND:
+--Switching among database
+use name_of_db;
+
+--> For every db created you can keep working accessing them as the root user
+--> or you create a particular user to acts as the db admin
+
+COMMAND:
+--Creating a new user for newly created database
+create user 'username'@'localhost' identified by 'replace_with_intended_password'
+
+
+COMMAND:
+--Grant all priviledges on a database to a newly created user
+grant all privileges on name_of_db.* to 'username'@'localhost';
+
+COMMAND:
+--flush privileges
+flush privileges;
+
+COMMAND:
+--Exit a mysql db
+exit 
+
+COMMAND:
+-- Login using the newly created user credentials 
+sudo mysql -u username -p
+
+CREDENTIALS:
+Name of db: photo_app_db
+
+User:
+name: photo_app_admin1
+password: photoappadmin1
+
+
+
+------------------------------------>
+CREATING THE CONTROLLERS FOR OUR RESOURCES
+@RestController--> This class will be handling requests and responses
+@RequestMapping --> This are the requests paths it will handle
